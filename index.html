@@ -10,6 +10,11 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+<!-- ADD GOOGLE FONT-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
@@ -38,12 +43,38 @@ body, html {
     padding: 20px;
   }  
 
+.my-gradient {
+    background-image: linear-gradient(140deg, #BFD641 0%, #B0B0B0 50%, #BC70A4 75%);
+}  
+
+.my-hover:hover {
+            opacity: 0.75;
+        }
+
+.dm-serif-text-regular {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dm-serif-text-regular-italic {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
 @media (max-width: 768px) {
 .w3-card-2 {
     min-width: auto;
     max-width: 100%;
     padding: 5px;
   }
+  .my-gradient span {
+    display: none;
+    }  
+  .my-gradient::after { 
+  content: " - ";
+}  
 }
 </style>
 </head>
@@ -51,15 +82,14 @@ body, html {
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
-  <div class="w3-bar w3-white w3-card"  id="myNavbar" style="background-image: linear-gradient(140deg, #EADEDB 0%, #BC70A4 50%, #BFD641 75%);">
-    <a href="#home" class="w3-bar-item w3-button w3-wide" style="background-color: #d8b4c6">PETER LEONARD</a>
+  <div class="w3-bar w3-white w3-card"  id="myNavbar" style="font-size:larger; background-image: linear-gradient(140deg, #EADEDB 0%, #BC70A4 50%, #BFD641 75%);">
+    <a href="#home" class="w3-bar-item w3-button w3-wide" style="background-color: #d8b4c6;">PETER LEONARD</a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small" >
       <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
-      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
-      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a>
-      <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> PACKAGES</a>
-      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+      <a href="#skills" class="w3-bar-item w3-button">RESUME & SKILLS</a>
+      <a href="#work" class="w3-bar-item w3-button">PROJECTS</a>
+      <a href="#contact" class="w3-bar-item w3-button">CONTACT</a>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -73,105 +103,162 @@ body, html {
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
   <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
-  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
-  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
-  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
+  <a href="#skills" onclick="w3_close()" class="w3-bar-item w3-button">RESUME & SKILLS</a>
+  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">PROJECTS</a>
   <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
 </nav>
 
+
 <!-- Header with full-height image -->
+<!--
 <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
   <div class="w3-display-left w3-text-white" style="padding:48px">
-    <span class="w3-jumbo w3-hide-small">Create something that matters<br>with <i>Sound Applications</i></span><br>
-    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Create something that matters</span><br>
-    <span class="w3-large">Define your brand with custom web and mobile applications</span>
-    <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more and start today</a></p>
+    <span class="w3-hide-small dm-serif-text-regular" style="font-size:8rem;"><i>PETER LEONARD</i></span>
+        <span class="w3-xxxlarge w3-hide-small dm-serif-text-regular" style="font-size: smaller;"><br>Front End Developer, Creative Coder, and Educator</i></span><br>
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Peter Leonard</span><br>
+    <span class="w3-large">Developer of SEO optimized Websites and Web Applications. <br>Passionate creator of solutions for education and med-tech.</span>
+    <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top my-hover" style="background-image: linear-gradient(140deg, #EADEDB 0%, #BC70A4 50%, #BFD641 75%);"><span style="color:white;">Learn more...</span></a></p>
   </div> 
 
 </header>
+-->
+
+<!-- Header with full-height image -->
+<header class="bgimg-1  w3-grayscale-min" id="home">
+
+<div class="w3-row">
+ <div class="w3-col w3-container m8 l9">
+
+    <div class="w3-display-left w3-text-white" style="padding:48px">
+      <span class="w3-hide-small dm-serif-text-regular" style="font-size: clamp(6rem, 8vw, 8rem)"><i>PETER LEONARD</i></span>
+          <span class="w3-xxxlarge w3-hide-small dm-serif-text-regular" style="font-size: smaller;"><br>Front End Developer, Creative Coder, and Educator</i></span><br>
+      <span class="w3-xxlarge w3-hide-large w3-hide-medium">Peter Leonard</span><br>
+      <span class="w3-large">Developer of SEO optimized Websites and Web Applications. <br>Passionate creator of solutions for education and med-tech.</span>
+      <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top my-hover" style="background-image: linear-gradient(140deg, #EADEDB 0%, #BC70A4 50%, #BFD641 75%);"><span style="color:white;">Learn more...</span></a></p>
+    </div> 
+  
+ </div>
+
+    <div class="w3-col w3-container m4 l3">    
+        <img class="w3-round-large" style="position: absolute; right: 50px; top: 150px; border: 2px solid #bd73a5; width: clamp(100px, 15vw, 450px)" src="https://peteleonard.org/wp-content/uploads/2024/09/Headshot.jpg" alt="Portrait of Peter Leonard">
+        
+    </div>
+    
+  </div>   
+</header>
+
 
 <!-- About Section -->
-<div class="w3-container" style="padding:128px 16px" id="about">
-  <h3 class="w3-center">ABOUT THE COMPANY</h3>
-  <p class="w3-center w3-large">Key features of our company</p>
-  <div class="w3-row-padding w3-center" style="margin-top:64px">
-
-    <div class="w3-quarter">
-      <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
-      <p class="w3-large">Responsive</p>
-      <p>All of our websites are fully responsive, meaning they look great on desktop, tablet, or mobile.</p>
-    </div>
-
-    <div class="w3-quarter">
-      <i class="fa fa-photo w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Design</p>
-      <p>From template customization, to full design and photography services - we do it all!</p>
-    </div>
-
-    <div class="w3-quarter">
-      <i class="fas fa-flask w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Development</p>
-      <p>With a background in science and data analysis, we can help bring your tech idea to fruition.</p>
-    </div>
-
-    <div class="w3-quarter">
-      <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Support</p>
-      <p>We're here 7 days a week to assist with your technical, business and creative needs.</p>
-    </div>         
+<div class="w3-container" style="padding:58px 16px; min-height: 70%;" id="about">
+      <div class="w3-row-padding" style="padding-top:58px;">
     
-  </div>
-</div>
-
-    <div class="w3-center" style="max-width:500px; margin: 0 auto;
-  padding: 20px;">
-      <i class="fas fa-tools w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Other Services</p>
-      <p>1. We offer full in-house video and audio editing capabilities.<br>
-       2. We deliver a full range of AV (audio and video) services for your office or special event, including video projections, LED screens, multi-channel sound 
-        system design and installation.<br>
-        3. Collaborating with local partners, we also offer full printing, manufacturing (3D printing), and fabrication (CNC and carpentry) services.<br> 
-    </p>
-    </div> 
-
-<!-- Promo Section - "We know design" -->
-<div class="w3-container w3-light-grey" style="padding:128px 16px">
-  <div class="w3-row-padding">
-    <div class="w3-col m6">
-      <h3>Get Seen!</h3>
-      <p>SEO is hugely important in today's competitive online environment.  We have the tools to get your website to the top of the stack.</p>
-      <p><a href="#work" class="w3-button w3-black"><i class="fa fa-th"> </i> View Our Works</a></p>
+        <div class="w3-col m6">
+          <img class="w3-image w3-round-large" src="https://peteleonard.org/wp-content/uploads/2024/10/Portrait-Founder-Peter-Leonard.jpg" alt="Sound Applications' Founder Peter Leonard">
+        </div>    
+    
+        <div class="w3-col m6" style="font-size:larger;">
+          <h2><i>About Me</i></h2>
+          <p>
+            <strong>DEVELOPER</strong> - I’m a front-end focused developer passionate about creating accessible, pixel-perfect user interfaces that blend thoughtful design with robust engineering. 
+            My favorite work lies at the intersection of design and development, creating experiences that not only look great but are meticulously 
+            built for performance and usability. Currently, I'm a Front-End Engineer at Trivium Interactive, specializing in creating reusable UI components for Wordpress. 
+          </p>
+          <p>
+            <strong>RESEARCHER</strong> - By night, I'm busy with research related to audio encryption, electronic instrument design, and medical 
+            applications for sound. My med-tech company <i>Sound Applications</i> is set to release its first product (an app for dementia) later in 2025.  
+            My research has been featured in the Journal SEAMUS.</p>
+            <p>
+            <strong>EDUCATOR</strong> - I'm also a passionate educator who has taught at Tulane University and numerous high schools, 
+            often in special education and music therapy. I've created and led a large number of community workshops on various topics 
+            including robotics, homemade instrument building, visual arts, and music theory.
+          </p>
+        </div>
+    
+      </div>
     </div>
-    <div class="w3-col m6">
-      <img class="w3-image w3-round-large" src="https://peteleonard.org/wp-content/uploads/2024/09/phone_buildings.jpg" alt="Buildings" width="700" height="394">
-    </div>
-  </div>
-</div>
+    
 
-<!-- Team Section -->
-<div class="w3-container" style="padding:128px 16px" id="team">
-  <h3 class="w3-center">THE FOUNDER</h3>
-  <p class="w3-center w3-large">The story behind the company, and what's to come...</p>
+<!-- Skills Section -->
+<div class="w3-container w3-light-grey w3-padding-64" id="skills">
+    <div class="w3-row-padding">
+      <div class="w3-col m6" style="font-size:larger; padding: 0px 50px 0px 50px;">
+        <h2 style="text-align: center;">RESUME</h2>
+        <h3><i><u>Select Experience</u></i></h3>
+        <li style="list-style-type: none;"><strong>Front End Engineer,</strong> Trivium Interactive, Boston (March 2024 - Current)
+            <ul><li style="list-style-type: none;">
+            Lead developer for Wordpress theme development, including custom CSS3 animations, PHP shortcodes and functions, 
+            and advanced custom fields.</li>
+            <li style="list-style-type: none;">
+            <strong>KEY PROJECT:</strong> <a href="https://apacdev.tmixd.com/" target="_blank">Smithsonian APAC Sightlines</a> </li>
+        </ul>
+        </li>    
+           
 
-  <div class="w3-container" style="margin-top:14px; text-align: center; padding: 50px;">
-    <div class="w3-card-2" style="margin: 0 auto;">
-      <img src="https://peteleonard.org/wp-content/uploads/2024/09/Headshot.jpg" alt="John" style="width:100%">
-      <div class="w3-container">
-        <h3>Peter Leonard</h3>
-        <p class="w3-opacity">CEO & Founder</p>
-        <p>Our founder has background in the arts, science, and tech - he holds a BA in Integrative Arts from Penn State, 
-          and came to coding during his graduate studies at Tulane in the field of Music, Science and Technology.
-         His early work in special education informs his deepest passions in the tech world - to create apps and software
-         that use sound to help those with neurological issues. <i>Sound Applications</i> is currently in the R & D 
-         phase for their first med-tech app, Sound for Aging, aimed for release in 2025.
-        </p>
-        <h4>Learn About the <a href="https://peteleonard.org/sounds-for-aging/"><i>Sound for Aging</i></a> App.</h4> 
+        <li style="list-style-type: none;"><strong>Founder and Lead Developer, </strong>Sound Applications, New Bedford, MA,  (2020 - Present)
+                <ul><li style="list-style-type: none;">
+                Founder and lead developer for med-tech company, developing apps leveraging sound for health and wellness. The
+                company's first app <i>Sound for Aging</i> uses the Web Audio API for its DSP, producing 40Hz gamma isochronic tones 
+                for treatment of dementia.</li>
+                <li style="list-style-type: none;">
+                <strong>KEY PROJECT:</strong> <a href="https://peteleonard.org/sounds-for-aging/" target="_blank">Sound for Aging</a> </li>
+            </ul>        
+        
+        </li> 
+            
+        
+        <li style="list-style-type: none;"><strong>Web Developer / Manager, </strong>Antiques de Provence, New Orleans,  (Oct. 2013 – Oct. 2019) 
+                <ul><li style="list-style-type: none;">
+                Designed, maintained, and coded the full life cycle for this e-commerce WordPress website, with custom plugins; in charge of all graphics and photo editing.</li>
+                <li style="list-style-type: none;">
+                <strong>KEY PROJECT:</strong> <a href="https://lacornueusa.com/find-a-dealer/location/antiques-de-provence-llc" target="_blank">Antiques de Provence</a> </li>
+            </ul>        
+            
+        </li> 
+
+        <h3 style="padding-top: 20px;"><i><u>Education</u></i></h3>
+        <p><strong>MA in Music, Science and Technology, </strong>Tulane University</p>         
+        <p><strong>BA in Integrative Arts, </strong>Penn State University</p>         
+
+        
+      </div>
+
+
+      <div class="w3-col m6" style="padding: 0px 50px 0px 50px; font-size: larger;">
+        <h2 style="text-align: center;">SKILLS</h2>
+        
+        <p class="w3-wide"><i class="fa fa-desktop w3-margin-right"></i>HTML</p>
+        <div>
+          <div class="w3-container w3-center my-gradient" style="width:100%"><span>Content and Structure</span></div>
+        </div>
+        
+        <p class="w3-wide"><i class="fa fa-photo w3-margin-right"></i>CSS3, SCSS, LESS</p>
+        <div>
+          <div class="w3-container  w3-center my-gradient" style="width:95%"><span>Responsive Layouts, Interaction, and Animations</span></div>
+        </div>      
+        
+        <p class="w3-wide"><i class="fas fa-mobile w3-margin-right"></i>Javascript, jQuery</p>
+        <div>
+          <div class="w3-container w3-center my-gradient" style="width:85%"><span>Interactivity and Dynamic Elements</span></div>
+        </div>      
+        
+      <p class="w3-wide"><i class="fas fa-desktop w3-margin-right"></i>Wordpress</p>
+        <div>
+          <div class="w3-container w3-center my-gradient" style="width:80%"><span>PHP Theme Development, Plugins, Custom Blocks</span></div>
+        </div>    
+        
+      <p class="w3-wide"><i class="fab fa-accessible-icon w3-margin-right"></i>SEO & Accessibility</p>
+        <div>
+          <div class="w3-container w3-center my-gradient" style="width:65%"><span>Ensuring Visibility and Compliance</span></div>
+        </div>      
+        
+      <p class="w3-wide"><i class="fas fa-tools w3-margin-right"></i>GIT and Github</p>
+        <div>
+          <div class="w3-container w3-center my-gradient" style="width:55%"><span>Maintaining Backups and Collaborating</span></div>
+        </div>  
+  
       </div>
     </div>
   </div>
-</div>
-
-
 
 <!-- Promo Section "Statistics" -->
 <div class="w3-container w3-row w3-center w3-dark-grey w3-padding-64">
@@ -194,48 +281,146 @@ body, html {
 </div>
 
 <!-- Work Section -->
-<div class="w3-container" style="padding:128px 16px" id="work">
-  <h3 class="w3-center">OUR WORK</h3>
-  <p class="w3-center w3-large">What we've done for people</p>
+<!-- PROJECT 1 -->
+<div class="w3-container" style="padding:48px 16px; min-height: 70%;" id="work">
+    <div class="w3-row-padding" style="padding-top:58px;">
+  
+      <div class="w3-col m6" style="padding-top: 25px;">
+      <video controls="controls" width="100%" name="Smithsonian Intro">
+        <source src="https://peteleonard.org/wp-content/uploads/2024/11/APAC-Intro.mov">
+      </video>
+      </div>
+      
+  
+      <div class="w3-col m6" style="font-size:larger; padding: 0px 20px 0px 20px;">
+        <h2><i>Project 1: The Smithsonian APAC Sightlines Atlas</i></h2>
+        <p>
+        <strong>SUMMARY: </strong>Website for the Smithsonian Asian Pacific Alliance's new exhibition SIGHTLINES in Washington D.C. I collaborated with a cross functional team
+          at Trivium Interactive (as Front End Engineer) on the develpoment of this site.
+        </p>
+        <p>
+        <strong>MY ROLE: </strong>I worked with the team's designer who provided wireframes, upon which I built out the custom theme for the site. In addition to basic
+        coding of the theme's templates, functions, and a custom plugin, I also contributed heavily to the design (color palette and typography) and was tasked
+        with implementing all responsive design choices. 
+        </p>
+        <p>
+        <strong>NEW CHALLENGES: </strong> The client wanted a highly interactive and animated feel, so I was able to gain new skills adding custom moving, scroll-based, and hover elements
+        using CSS3 and Javascript. SEO and Accessibility were also paramount to this project.  I spent more time than ever before conducting ADA scans and adding 
+        accessibility features to the site, to make sure it was compliant and user friendly. I also incorporated multiple APIs into the theme and created my first 
+        standalone Gutenberg blocks.
+        </p>
+        <p>
+        <strong>LINK: </strong> <a href="https://apacdev.tmixd.com/" target="_blank">https://apacdev.tmixd.com/</a>
+        </p>        
+      </div>
+
+      <div class="w3-row-padding" style="margin-top:64px">
+        <div class="w3-col l3 m6">
+          <a href="https://apacdev.tmixd.com/" target="_blank">  <img src="https://peteleonard.org/wp-content/uploads/2024/09/Smithsonian.png" style="width:100%" class="w3-hover-opacity" alt="Smithsonian Website">
+          </a>
+        </div>
+        <div class="w3-col l3 m6">
+          <img src="https://peteleonard.org/wp-content/uploads/2024/11/Compass.gif" style="width:100%" class="w3-hover-opacity" alt="Navigation Buttons Demo">                  
+        </div>
+        <div class="w3-col l3 m6">
+          <img src="https://peteleonard.org/wp-content/uploads/2024/11/Scroll-Effect.gif" style="width:100%"  class="w3-hover-opacity" alt="Scroll Demo">          
+        </div>
+        <div class="w3-col l3 m6">
+          <img src="https://peteleonard.org/wp-content/uploads/2024/11/Lion-Dance.png" style="width:100%"  class="w3-hover-opacity" alt="Lion Dance">
+        </div>
+      </div>
+  
+    </div>
+  </div>
+
+<!-- PROJECT 2 -->
+<div class="w3-container w3-light-grey" style="padding:48px 16px; min-height: 70%;">
+    <div class="w3-row-padding" style="padding-top:58px;">
+        <div class="w3-col m6" style="font-size:larger; padding: 0px 20px 0px 20px;">
+            <h2><i>Project 2: Sound for Aging</i></h2>
+            <p>
+            <strong>SUMMARY: </strong>An audio app leveraging the Web Audio API to generate targeted 40Hz audio (using a proprietary algorithm)
+                to help users with Alzheimer's and other forms of dementia.
+            </p>
+            <p>
+            <strong>MY ROLE: </strong>I bring a personal story to this project.  My mother suffers with dementia, and this inspired me to research
+            alternative therapies for the disease.  Bringing together my background in app development and audio research, I discovered that 40Hz
+            pulses of light and audio have proven benefit for dementia.  I began developing various audio implementations of this technology.
+            </p>
+            <p>
+            <strong>NEW CHALLENGES: </strong> The hardest aspect of releasing a science-based app is proving your product's efficacy (by securing
+            a university partner to assist with clinical studies); but I've just gotten sign on from faculty at Purdue University and plan 
+            to do further testing and optimizing in 2025.
+            </p>
+            <p>
+            <strong>LINK: </strong> <a href="https://peteleonard.org/sounds-for-aging/" target="_blank">https://peteleonard.org/sounds-for-aging/</a>
+            </p>               
+          </div>        
+  
+      <div class="w3-col m6" style="padding-top: 25px;">
+        <img src="https://peteleonard.org/wp-content/uploads/2024/11/App-Preview.png" style="width:100%" class="w3-hover-opacity" alt="Sound for Aging App">        
+      </div>
+    </div>
+  </div>  
+
+<!-- PROJECT 3 -->
+<div class="w3-container" style="padding:48px 16px; min-height: 70%;">
+    <div class="w3-row-padding" style="padding-top:58px;">
+  
+      <div class="w3-col m6" style="padding-top: 25px;">
+        <img src="https://peteleonard.org/wp-content/uploads/2024/09/Tulane.png" style="width:100%" class="w3-hover-opacity" alt="Tulane University">                 
+      </div>
+      
+  
+      <div class="w3-col m6" style="font-size:larger; padding: 0px 20px 0px 20px;">
+        <h2><i>Project 3: Tulane AB Freeman School of Business</i></h2>
+        <p>
+        <strong>SUMMARY: </strong>Website for the Tulane AB Freeman School of Business, including multiple subsites, faculty blogs, and the private student/faculty database.
+        </p>
+        <p>
+        <strong>MY ROLE: </strong>I worked within the Tulane IT Department, as part of the Web Team, and collaborated on design, coding, and maintenance of the 
+        primary wesbite for the business school. I worked on a large overhaul of the entire website, automating conversion of hundreds of pages. I also
+        assisted faculty and staff with their scholarly publishing needs.
+        </p>
+        <p>
+        <strong>NEW CHALLENGES: </strong> The student/faculty MYSQL database needed an interface to allow students and faculty to access important information about other
+        personnel within the department. I created a new PHP interface for this intraweb site to accomplish this need.
+        </p>
+        <p>
+        <strong>LINK: </strong> <a href="https://freeman.tulane.edu/" target="_blank">https://freeman.tulane.edu/</a>
+        </p>        
+      </div>
+  
+    </div>
+  </div>  
+
+<!-- Work Additional Section -->
+<div class="w3-container w3-dark-grey" style="padding:48px 16px">
+  <h3 class="w3-center">ADDITIONAL PROJECTS</h3>
 
   <div class="w3-row-padding" style="margin-top:64px">
-    <div class="w3-col l3 m6">
-      <a href="https://apacdev.tmixd.com/" target="_blank">  <img src="https://peteleonard.org/wp-content/uploads/2024/09/Smithsonian.png" style="width:100%" class="w3-hover-opacity" alt="Smithsonian Website">
-      </a>
-    </div>
+
     <div class="w3-col l3 m6">
       <a href="https://antieaugallery.com/" target="_blank">  <img src="https://peteleonard.org/wp-content/uploads/2024/09/Antieau.png" style="width:100%" class="w3-hover-opacity" alt="Antieau Gallery">        
       </a>
     </div>
-    <div class="w3-col l3 m6">
-      <a href="https://freeman.tulane.edu/" target="_blank">  <img src="https://peteleonard.org/wp-content/uploads/2024/09/Tulane.png" style="width:100%"  class="w3-hover-opacity" alt="Tulane University Website">
-      </a>
-    </div>
-    <div class="w3-col l3 m6">
-      <a href="https://ribroomneworleans.com/" target="_blank">  <img src="https://peteleonard.org/wp-content/uploads/2024/09/Rib.png" style="width:100%"  class="w3-hover-opacity" alt="Rib Room">
-      </a>
-    </div>
-  </div>
 
-  <div class="w3-row-padding w3-section">
     <div class="w3-col l3 m6">
-      <a href="https://www.yourdesignteam.tv/" target="_blank">  <img src="https://peteleonard.org/wp-content/uploads/2024/09/Sherri-1.png" style="width:100%"  class="w3-hover-opacity" alt="Sherri Korhonen">
-      </a>
-    </div>
-    <div class="w3-col l3 m6">
-      <a href="https://lacornueusa.com/find-a-dealer/location/antiques-de-provence-llc" target="_blank">  <img src="https://peteleonard.org/wp-content/uploads/2024/09/La-Cornue.png" style="width:100%" class="w3-hover-opacity" alt="La Cornue">
-      </a>
-    </div>
-    <div class="w3-col l3 m6">
-      <a href="https://www.pascalsmanale.com/" target="_blank">  <img src="https://peteleonard.org/wp-content/uploads/2024/09/Pascals.png" style="width:100%" class="w3-hover-opacity" alt="Pascal's Manale">
-      </a>
-    </div>
-    <div class="w3-col l3 m6">
-      <a href="https://www.nudesbydelivery.com/" target="_blank">  <img src="https://peteleonard.org/wp-content/uploads/2024/11/Nudes-by-Delivery.png" style="width:100%" class="w3-hover-opacity" alt="Nudes by Delivery">
-      </a>
-    </div>
-  </div>
+        <a href="https://www.yourdesignteam.tv/" target="_blank">  <img src="https://peteleonard.org/wp-content/uploads/2024/09/Sherri-1.png" style="width:100%"  class="w3-hover-opacity" alt="Sherri Korhonen">
+        </a>
+      </div>    
 
+      <div class="w3-col l3 m6">
+        <a href="https://lacornueusa.com/find-a-dealer/location/antiques-de-provence-llc" target="_blank">  <img src="https://peteleonard.org/wp-content/uploads/2024/09/La-Cornue.png" style="width:100%" class="w3-hover-opacity" alt="La Cornue">
+        </a>
+      </div> 
+
+      <div class="w3-col l3 m6">
+        <a href="https://ribroomneworleans.com/" target="_blank">  <img src="https://peteleonard.org/wp-content/uploads/2024/09/Rib.png" style="width:100%"  class="w3-hover-opacity" alt="Rib Room">
+        </a>
+      </div>      
+
+  </div>
 </div>
 
 <!-- Modal for full size images on click-->
@@ -247,129 +432,18 @@ body, html {
   </div>
 </div>
 
-<!-- Skills Section -->
-<div class="w3-container w3-light-grey w3-padding-64">
-  <div class="w3-row-padding">
-    <div class="w3-col m6">
-      <h3>Our Skills.</h3>
-      <p>For over a decade, Sound Applications' team has been building custom online solutions for clients small and large.  We specialize in creating custom Wordpress sites, fully responsive for all devices, and optimized for SEO and accessibility.</p>
-      <p>Coming from a background in the arts and sciences, we bring beautiful designs and aesthetic appeal, while also ensuring you have the highest level of tech support, fully managed and updated so you don't have to worry.</p>
-    </div>
-    <div class="w3-col m6">
-      
-      <p class="w3-wide"><i class="fa fa-desktop w3-margin-right"></i>Web Development</p>
-      <div>
-        <div class="w3-container w3-dark-grey w3-center" style="width:100%">40%</div>
-      </div>
-      
-      <p class="w3-wide"><i class="fa fa-photo w3-margin-right"></i>Design & Photography</p>
-      <div>
-        <div class="w3-container w3-dark-grey w3-center" style="width:60%">25%</div>
-      </div>      
-      
-      <p class="w3-wide"><i class="fas fa-mobile w3-margin-right"></i>App Development</p>
-      <div>
-        <div class="w3-container w3-dark-grey w3-center" style="width:40%">15%</div>
-      </div>      
-      
-    <p class="w3-wide"><i class="fas fa-microscope w3-margin-right"></i>Research & Development</p>
-      <div>
-        <div class="w3-container w3-dark-grey w3-center" style="width:25%">10%</div>
-      </div>    
-      
-    <p class="w3-wide"><i class="fab fa-accessible-icon w3-margin-right"></i>SEO & Accessibility</p>
-      <div>
-        <div class="w3-container w3-dark-grey w3-center" style="width:12.5%">5%</div>
-      </div>      
-      
-    <p class="w3-wide"><i class="fas fa-tools w3-margin-right"></i>Fabrication & AV</p>
-      <div>
-        <div class="w3-container w3-dark-grey w3-center" style="width:12.5%">5%</div>
-      </div>  
 
-    </div>
-  </div>
-</div>
 
-<!-- Pricing Section -->
-<div class="w3-container w3-center w3-dark-grey" style="padding:128px 16px" id="pricing">
-  <h3>PRICING</h3>
-  <p class="w3-large">Choose a package that fits your needs.</p>
-  <div class="w3-row-padding" style="margin-top:64px">
-    <div class="w3-third w3-section">
-      <ul class="w3-ul w3-white w3-hover-shadow">
-        <li class="w3-black w3-xlarge w3-padding-32">Basic Website</li>
-        <li class="w3-padding-16">Developed in Wordpress</li>
-        <li class="w3-padding-16">Customized Template</li>
-        <li class="w3-padding-16">Add Your Own Content</li>
-        <li class="w3-padding-16"><b>Basic</b> Support</li>
-        <li class="w3-padding-16">
-          <span class="w3-opacity">starting at</span>        
-          <h2 class="w3-wide">$ 999</h2>
-        </li>
-        <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-black w3-padding-large">Sign Up</button>
-        </li>
-      </ul>
-    </div>
-    <div class="w3-third">
-      <ul class="w3-ul w3-white w3-hover-shadow">
-        <li class="w3-red w3-xlarge w3-padding-48">Pro Web Hosting</li>
-        <li class="w3-padding-16"><b>25GB</b> Storage</li>
-        <li class="w3-padding-16"><b>Personal</b> Template</li>
-        <li class="w3-padding-16"><b>10</b> Domains</li>
-        <li class="w3-padding-16"><b>Endless</b> Support</li>
-        <li class="w3-padding-16">
-          <span class="w3-opacity">Custom design costs, then</span>
-          <h2 class="w3-wide">$ 55</h2>
-          <span class="w3-opacity">per month</span>
-        </li>
-        <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-black w3-padding-large">Sign Up</button>
-        </li>
-      </ul>
-    </div>
-    <div class="w3-third w3-section">
-      <ul class="w3-ul w3-white w3-hover-shadow">
-        <li class="w3-black w3-xlarge w3-padding-32">Advanced R & D</li>
-        <li class="w3-padding-16">Develop Your Own Idea</li>
-        <li class="w3-padding-16">Create an app</li>
-        <li class="w3-padding-16">Supported by Data Analysis</li>
-        <li class="w3-padding-16"><b>Endless</b> Support</li>
-        <li class="w3-padding-16">
-          <h2 class="w3-wide">Call Us!</h2>
-          <span class="w3-opacity">for a free consultation</span>
-        </li>
-        <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-black w3-padding-large">Sign Up</button>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
+
 
 <!-- Contact Section -->
-<div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
+<div class="w3-container w3-light-grey" style="padding:18px 16px" id="contact">
   <h3 class="w3-center">CONTACT</h3>
-  <p class="w3-center w3-large">Let's get in touch. Send us a message:</p>
+  <p class="w3-center w3-large">Let's get in touch. Send me a message:</p>
   <div style="margin-top:48px">
-    <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> New Bedford, MA</p>
     <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: (267) 290-0854</p>
     <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: pleonardmusic @ gmail.com</p>
     <br>
-    <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
-      <p>
-        <button class="w3-button w3-black" type="submit">
-          <i class="fa fa-paper-plane"></i> SEND MESSAGE
-        </button>
-      </p>
-    </form>
-    <!-- Image of location/map -->
-    <img src="https://peteleonard.org/wp-content/uploads/2024/09/New-Bedford-Downtown.jpg" class="w3-image w3-greyscale" style="width:100%;margin-top:48px">
   </div>
 </div>
 
@@ -377,7 +451,6 @@ body, html {
 <footer class="w3-center w3-black w3-padding-64">
   <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
 
-  <p>Powered by <a href="https://www.wordpress.com" title="W3.CSS" target="_blank" class="w3-hover-text-green">Wordpress</a></p>
 </footer>
  
 <script>
